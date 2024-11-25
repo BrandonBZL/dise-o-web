@@ -1,0 +1,374 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación fade-in para la carga de la página */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #5a009d, #a64ca6);
+    color: white;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo-image {
+    display: block; /* Asegura que la imagen comience en una nueva línea */
+    margin: 10px auto; /* Centra la imagen horizontalmente */
+    max-width: 100px; /* Ajusta el tamaño máximo según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Opcional: redondea las esquinas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: agrega un efecto de sombra */
+}
+
+.menu button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #5a009d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.menu button:hover {
+    background-color: #5a009d;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #add8e6, white);
+    min-height: calc(100vh - 80px);
+}
+
+.content-box {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+.social-links li {
+    display: flex;
+    align-items: center;
+}
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.social-links a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #F95454;
+}
+
+/* Animación slide-in */
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animación para agrandar las cajas cuando pasamos el cursor */
+.content-box:hover {
+    transform: scale(1.05);
+}
+
+/* Títulos */
+.center-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: #5a009d;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para "Sobre nosotros" */
+.content-box p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #333;
+    text-align: justify;
+}
+
+.profile-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeInImage 1s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilo para "Servicios" */
+.service-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.service-image {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-image:hover {
+    transform: scale(1.1);
+}
+
+.video-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.video-link:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Modal */
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Esto centra el modal */
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #5a009d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a0085;
+    transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilo para la tabla en "Por qué elegirnos" */
+.advantages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.advantages-table th, .advantages-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.advantages-table th {
+    background-color: #5a009d;
+    color: white;
+}
+
+.advantages-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos específicos para los modelos */
+.model-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.model-card {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: calc(100% / 3 - 40px);
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.model-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.model-card .model-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.model-card .model-title {
+    font-size: 1.2em;
+    color: #5a009d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.model-card .model-description {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+}
+
+.model-card .model-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.model-card .model-actions button {
+    padding: 10px 15px;
+    background-color: #5a009d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.model-card .model-actions button:hover {
+    background-color: #4a0085;
+    transform: scale(1.1);
+}
+
+/* Responsividad para los modelos */
+@media (max-width: 768px) {
+    .model-card {
+        width: calc(100% / 2 - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .model-card {
+        width: 100%;
+    }
+}
